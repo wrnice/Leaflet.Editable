@@ -8,7 +8,7 @@ This is not a plug and play UI, and will not be. This is a minimal, lightweight,
 and fully extendable API to control editing of geometries. So you can easily
 build your own UI with your own needs and choices.
 
-See the [demo UI](http://Leaflet.github.io/Leaflet.Editable/example/index.html), an more [examples below](#examples).
+See the [demo UI](http://wrnice.github.io/Leaflet.Editable/example/index.html), an more [examples below](#examples).
 This is also the drawing engine behind [uMap](http://wiki.openstreetmap.org/wiki/UMap).
 
 

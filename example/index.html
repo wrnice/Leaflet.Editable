@@ -177,6 +177,21 @@ var map = L.map('map', {editable: true}).setView(startPoint, 16),
     var circle = L.circle([43.1220, 1.250], {radius: 100}).addTo(map);
     circle.enableEdit();
     circle.on('dblclick', L.DomEvent.stop).on('dblclick', circle.toggleEdit);
+  
+  map.on('draw:created', showPolygonArea);
+map.on('draw:edited', showPolygonAreaEdited);
+
+function showPolygonAreaEdited(e) {
+  e.layers.eachLayer(function(layer) {
+    showPolygonArea({ layer: layer });
+  });
+}
+function showPolygonArea(e) {
+  featureGroup.clearLayers();
+  featureGroup.addLayer(e.layer);
+  e.layer.bindPopup((LGeo.area(e.layer) / 1000000).toFixed(2) + ' km<sup>2</sup>');
+  e.layer.openPopup();
+}
 
 </script>
 </body>
